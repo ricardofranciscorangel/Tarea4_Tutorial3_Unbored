@@ -1,11 +1,34 @@
-<script setup></script>
+<!-- App.vue -->
+<script setup>
+import { RouterLink, RouterView } from 'vue-router'
+</script>
 
 <template>
-  <h1>You did it!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
+  <header>
+    <h1>Unbored</h1>
+    <nav>
+      <RouterLink to="/" class="link"><button>Home</button></RouterLink>
+      <RouterLink to="/about" class="link"><button>About</button></RouterLink>
+    </nav>
+  </header>
+
+  <RouterView />
 </template>
 
-<style scoped></style>
+<style lang="scss" scoped>
+header {
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+
+  nav {
+    display: flex;
+    gap: 1rem;
+
+    .link {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+}
+</style>
