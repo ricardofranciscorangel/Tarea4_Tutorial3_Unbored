@@ -8,8 +8,8 @@ const activity = ref('');
 
 const fetchActivity = async () => {
     try {
-        const response = await axios.get('https://www.boredapi.com/api/activity');
-        activity.value = response.data.activity
+        const response = await axios.get('https://api.adviceslip.com/advice');
+        activity.value = response.data.slip.advice;
         console.log(response);
     } catch (error) {
         console.error(error);
